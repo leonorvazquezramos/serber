@@ -1,14 +1,11 @@
 package system;
 
-import java.util.List;
-
 import static system.SystemType.ROOT;
 
-public class BaseSystem extends SystemObject {
-
+public class BaseSystem extends BaseSystemObject {
 
     public BaseSystem() {
-        super(ROOT);
+        super(ROOT, "Main System, environment of every other SubSystem");
     }
 
 }
