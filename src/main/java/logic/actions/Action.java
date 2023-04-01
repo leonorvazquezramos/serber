@@ -1,8 +1,13 @@
 package logic.actions;
 
 
+import common.annotations.DocumentedClass;
+import common.annotations.DocumentedMethod;
 import logic.objects.NamedObject;
 
+@DocumentedClass(
+        description = "endeavour taken with a purpose"
+)
 public abstract class Action extends NamedObject {
     protected Actor actor;
     protected Effect intendedEffect;
@@ -14,10 +19,18 @@ public abstract class Action extends NamedObject {
         this.intendedEffect = intendedEffect;
     }
 
-    protected void setActor(Actor actor) {
+    @DocumentedMethod(
+            description = "changes the actor designed as owner",
+            returns = Void.class
+    )
+    public void setActor(Actor actor) {
         this.actor = actor;
     }
 
+    @DocumentedMethod(
+            description = "starts the action performance",
+            returns = Void.class
+    )
     public void start() {
         execution.start();
     }

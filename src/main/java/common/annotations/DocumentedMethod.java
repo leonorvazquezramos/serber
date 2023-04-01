@@ -9,5 +9,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 public @interface DocumentedMethod {
     String description();
-    String returns();
+    Class returns();
 }

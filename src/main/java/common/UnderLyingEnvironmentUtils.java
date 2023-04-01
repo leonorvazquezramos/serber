@@ -12,7 +12,7 @@ public class UnderLyingEnvironmentUtils {
 
     @DocumentedMethod(
             description = "retrieves host name",
-            returns = "network name of the computer"
+            returns = String.class
     )
     public static String getComputerName() {
         String name = null;
