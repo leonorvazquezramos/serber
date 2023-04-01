@@ -7,6 +7,6 @@ public class NameProperty extends Property {
 
     @Override
     public void setValue(String value) {
-        this.value = value;
+        this.value = new PropertyValue(value);
     }
 }

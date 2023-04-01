@@ -2,7 +2,7 @@ package properties;
 
 public abstract class Property {
     protected String name;
-    protected String value;
+    protected PropertyValue value;
 
     Property(String name) {
         this.name = name;
@@ -14,7 +14,7 @@ public abstract class Property {
     }
 
     public String getValue() {
-        return value;
+        return value.toString();
     }
 
     public abstract void setValue(String value);
