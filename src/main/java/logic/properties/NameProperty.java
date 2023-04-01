@@ -1,4 +1,4 @@
-package properties;
+package logic.properties;
 
 public class NameProperty extends Property {
     NameProperty() {

@@ -1,4 +1,4 @@
-package properties;
+package logic.properties;
 
 public abstract class Property {
     protected String name;
