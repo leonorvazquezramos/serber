@@ -1,18 +1,18 @@
 package logic.system;
 
 import logic.objects.BaseObject;
+import logic.system.implementations.AuthorConcretion;
 
 public abstract class SystemImplementation extends BaseObject {
 
-    private final SystemAuthors author;
-    private final SystemClasses clase;
+    private AuthorConcretion author;
     private final Natures nature;
+    private final Instant now = new Instant();
 
-    SystemImplementation(String name, String description, SystemAuthors author,
-    SystemClasses clase, Natures nature) {
+    protected SystemImplementation(String name, String description, Natures nature) {
         super(name, description);
-        this.author = author;
-        this.clase = clase;
         this.nature = nature;
     }
+
+
 }

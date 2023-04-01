@@ -1,14 +1,19 @@
 package common;
 
-
-import java.net.InetAddress;
-import java.net.UnknownHostException;
+import common.annotations.DocumentedClass;
+import common.annotations.DocumentedMethod;
 import java.util.logging.Logger;
 
-public class Utils {
+@DocumentedClass(
+        description = "static methods to interact with underlying computer and SO"
+)
+public class UnderLyingEnvironmentUtils {
+    private static final Logger log = Logger.getLogger(UnderLyingEnvironmentUtils.class.getName());
 
-    private static final Logger log = Logger.getLogger(Utils.class.getName());
-
+    @DocumentedMethod(
+            description = "retrieves host name",
+            returns = "network name of the computer"
+    )
     public static String getComputerName() {
         String name = null;
         name = getComputerNameUnix();
@@ -19,9 +24,12 @@ public class Utils {
     }
 
     private static String getComputerNameUnix() {
+        log.info("attempting retrieval from Unix");
         if(System.getenv("HOSTNAME") != null) {
+            log.info("environment variable HOSTNAME is not null: it will be used");
             return System.getenv("HOSTNAME");
         } else {
+            log.info("environment variable HOSTNAME is null");
             return null;
         }
     }
@@ -33,21 +41,5 @@ public class Utils {
             return null;
         }
     }
-
-
-    public static InetAddress getComputerIp() {
-        InetAddress ip;
-        log.info("instantiated ip");
-        try {
-            log.info("retrieving ip from system");
-            ip = InetAddress.getByName(Utils.getComputerName());
-            log.info("retrieved ip from system");
-        } catch (
-                UnknownHostException e) {
-            throw new RuntimeException(e);
-        }
-        return ip;
-    }
-
 
 }

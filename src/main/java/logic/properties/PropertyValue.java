@@ -1,13 +1,15 @@
 package logic.properties;
 
+import java.nio.charset.StandardCharsets;
+
 public class PropertyValue {
-    private String value = null;
+    private byte[] value;
 
     PropertyValue(String value) {
-        this.value = value;
+        this.value = value.getBytes(StandardCharsets.UTF_8);
     }
 
-    public String getValue() {
-        return value;
+    public void setValue(String value) {
+        this.value = value.getBytes(StandardCharsets.UTF_8);
     }
 }

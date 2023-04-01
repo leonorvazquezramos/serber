@@ -1,19 +1,26 @@
 package logic.objects;
 
-public abstract class NamedObject {
-    private static String name;
-    private static String description;
 
-    NamedObject(String newName, String newDescription) {
+public abstract class NamedObject extends SemanticObject {
+
+    private static String name;
+
+    private NamedObject() {
+        super("object with name");
+    }
+
+    protected NamedObject(String newName, String newDescription) {
+        this();
         name = newName;
         description = newDescription;
     }
 
-    public static String getName() {
+    protected void changeName(String newName) {
+        name = newName;
+    }
+
+    protected String getName() {
         return name;
     }
 
-    public static String getDescription() {
-        return description;
-    }
 }

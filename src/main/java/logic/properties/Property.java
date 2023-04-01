@@ -1,21 +1,7 @@
 package logic.properties;
 
-public abstract class Property {
-    protected String name;
-    protected PropertyValue value;
-
-    Property(String name) {
-        this.name = name;
-        this.value = null;
+public class Property extends ValuedObject {
+    Property(PropertyValue value) {
+        super(value);
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getValue() {
-        return value.toString();
-    }
-
-    public abstract void setValue(String value);
 }

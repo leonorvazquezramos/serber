@@ -1,15 +1,15 @@
 package logic.objects;
 
-import logic.properties.Property;
-import logic.system.SystemClasses;
+import logic.properties.ValuedObject;
+import logic.system.SystemImplementation;
 
 import java.util.List;
 
-public class BaseObject extends NamedObject {
-
+public abstract class BaseObject extends NamedObject {
 
     List<BaseObject> components;
-    List<Property> ownProperties;
+    List<ValuedObject> ownProperties;
+    SystemImplementation objectType;
 
     protected BaseObject(String objectName, String description) {
         super(objectName, description);
