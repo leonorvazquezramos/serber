@@ -16,9 +16,10 @@ public abstract class SemanticObject {
     protected Natures nature;
     protected SystemImplementation context;
 
-    SemanticObject(String description, Natures nature) {
+    SemanticObject(String description, Natures nature, SystemImplementation universe) {
         this.description = description;
         this.nature = nature;
         this.instantiationTime = context.now();
+        this.context = universe;
     }
 }

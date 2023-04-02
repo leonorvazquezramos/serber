@@ -7,18 +7,20 @@ import logic.system.Natures;
 import java.util.ArrayList;
 import java.util.List;
 
+import static logic.system.Natures.ABSTRACT;
+
 
 @DocumentedClass(
         description = "basic structure underlying a system or concept"
 )
 public abstract class Framework extends NamedObject {
-    private final List<NamedObject> concepts = new ArrayList<>();
+    private static final List<NamedObject> concepts = new ArrayList<>();
 
-    protected Framework(String name, String description, Natures nature) {
-        super(name, description, nature);
+    protected Framework(String name, String description) {
+        super(name, description, ABSTRACT);
     }
 
-    protected void registerConcept(NamedObject concept) {
+    protected static void registerConcept(NamedObject concept) {
         concepts.add(concept);
     }
 }

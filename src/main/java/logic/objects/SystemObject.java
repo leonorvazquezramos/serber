@@ -4,6 +4,7 @@ import common.annotations.DocumentedClass;
 import common.annotations.DocumentedField;
 import logic.objects.frameworks.Framework;
 import logic.system.Natures;
+import logic.system.SystemImplementation;
 
 @DocumentedClass(
         description = "first class citizen in the root System"
@@ -18,4 +19,5 @@ public class SystemObject extends NamedObject {
         super(name, description, nature);
         this.framework = framework;
     }
+
 }
