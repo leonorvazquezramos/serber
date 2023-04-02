@@ -5,8 +5,9 @@ import logic.physics.PhysicalBody;
 import logic.system.Natures;
 
 
-public abstract class ConcreteObject extends NamedObject {
+public abstract class ConcreteObject extends SystemObject {
     private PhysicalBody body;
+
 
     public ConcreteObject(String name, String description, Natures nature, Framework framework) {
         super(name, description, nature, framework);

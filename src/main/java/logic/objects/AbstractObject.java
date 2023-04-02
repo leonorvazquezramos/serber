@@ -6,7 +6,7 @@ import logic.system.Natures;
 
 
 @DocumentedClass(description = "not concrete object")
-public abstract class AbstractObject extends NamedObject {
+public abstract class AbstractObject extends SystemObject {
 
     public AbstractObject(String name, String description, Natures nature, Framework framework) {
         super(name, description, nature, framework);
