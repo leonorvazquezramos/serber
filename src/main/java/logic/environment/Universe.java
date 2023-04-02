@@ -1,11 +1,11 @@
 package logic.environment;
 
 import logic.environment.evolution.EvolutionTree;
-import logic.objects.BaseObject;
+import logic.objects.SystemObject;
 import logic.physics.PhysicalSpace;
 
 
-public class Universe extends BaseObject {
+public class Universe extends SystemObject {
 
     private PhysicalSpace space;
     private EvolutionTree objectTree = new EvolutionTree();
@@ -15,7 +15,7 @@ public class Universe extends BaseObject {
                 "Main System, environment of every other SubSystem");
     }
 
-    public void createObject(Object object) {
+    public void createObject(java.lang.Object object) {
         objectTree.add(object);
     }
 

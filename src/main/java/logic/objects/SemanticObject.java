@@ -1,9 +1,24 @@
 package logic.objects;
 
-public abstract class SemanticObject {
-    protected String description;
+import common.annotations.DocumentedClass;
+import logic.system.Instant;
+import logic.system.Natures;
+import logic.system.SystemImplementation;
 
-    SemanticObject(String description) {
+
+@DocumentedClass(
+        description = "object that has a meaning, thus exists"
+)
+public abstract class SemanticObject {
+
+    protected String description;
+    protected Instant instantiationTime;
+    protected Natures nature;
+    protected SystemImplementation context;
+
+    SemanticObject(String description, Natures nature) {
         this.description = description;
+        this.nature = nature;
+        this.instantiationTime = context.now();
     }
 }

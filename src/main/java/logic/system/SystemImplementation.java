@@ -1,18 +1,34 @@
 package logic.system;
 
-import logic.objects.BaseObject;
-import logic.system.implementations.AuthorConcretion;
+import logic.objects.NamedObject;
+import logic.objects.frameworks.Framework;
 
-public abstract class SystemImplementation extends BaseObject {
+import java.util.List;
 
-    private AuthorConcretion author;
-    private final Natures nature;
-    private final Instant now = new Instant();
+import static common.utils.JavaUtils.instantiateAllClassesByName;
 
-    protected SystemImplementation(String name, String description, Natures nature) {
-        super(name, description);
-        this.nature = nature;
+public abstract class SystemImplementation extends NamedObject {
+    protected static final Instant now = new Instant();
+    private List<Framework> existingFrameworks;
+
+    protected SystemImplementation(String systemName, String systemDescription,
+                                Natures systemNature) {
+        super(systemName, systemDescription, systemNature);
     }
 
+    protected void play() {
+        instantiateFrameworks();
+        while (true) {
+            now.next();
+        }
+    }
+
+    public Instant now() {
+        return now;
+    }
+
+    private void instantiateFrameworks() {
+        instantiateAllClassesByName("Framework", "logic.objects.frameworks");
+    }
 
 }

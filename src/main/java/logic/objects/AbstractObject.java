@@ -1,16 +1,14 @@
 package logic.objects;
 
 import common.annotations.DocumentedClass;
-import logic.system.SystemImplementation;
+import logic.objects.frameworks.Framework;
+import logic.system.Natures;
 
-import static logic.system.Natures.ABSTRACT;
 
 @DocumentedClass(description = "not concrete object")
-public abstract class AbstractObject extends SystemImplementation {
+public abstract class AbstractObject extends NamedObject {
 
-    AbstractObject() {
-        super("abstract object", "can't be perceived",
-                ABSTRACT);
+    public AbstractObject(String name, String description, Natures nature, Framework framework) {
+        super(name, description, nature, framework);
     }
-
 }

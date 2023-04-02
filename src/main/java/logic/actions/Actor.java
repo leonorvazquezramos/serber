@@ -1,8 +1,8 @@
 package logic.actions;
 
 
-import logic.objects.BaseObject;
+import logic.objects.SystemObject;
 
 public abstract class Actor {
-    private BaseObject actorObject;
+    private SystemObject actorObject;
 }

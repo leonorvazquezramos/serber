@@ -1,17 +1,14 @@
 package logic.objects;
 
+import logic.objects.frameworks.Framework;
 import logic.physics.PhysicalBody;
-import logic.system.SystemImplementation;
+import logic.system.Natures;
 
-import static logic.system.Natures.CONCRETE;
 
-public abstract class ConcreteObject extends SystemImplementation {
-
+public abstract class ConcreteObject extends NamedObject {
     private PhysicalBody body;
 
-    ConcreteObject () {
-        super("concrete object",
-                "can be perceived",
-                CONCRETE);
+    public ConcreteObject(String name, String description, Natures nature, Framework framework) {
+        super(name, description, nature, framework);
     }
 }
